@@ -21,10 +21,10 @@ class TelegramLoginButton extends React.Component {
     }
     script.setAttribute('data-request-access', requestAccess);
     script.setAttribute('data-userpic', usePic);
-    if (dataOnauth !== undefined) {
-      script.setAttribute('data-onauth', 'TelegramLoginWidget.dataOnauth(user)');
-    } else {
+    if (dataAuthUrl !== undefined) {
       script.setAttribute('data-auth-url', dataAuthUrl);
+    } else {
+      script.setAttribute('data-onauth', 'TelegramLoginWidget.dataOnauth(user)');
     }
     script.async = true;
     this.instance.appendChild(script);
